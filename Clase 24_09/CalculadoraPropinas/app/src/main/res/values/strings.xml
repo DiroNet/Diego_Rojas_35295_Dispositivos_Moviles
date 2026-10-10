@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Calculadora de Propinas</string>
+    <string name="calcular_propina">Calcular propina</string>
+    <string name="valor_cuenta">Valor de la cuenta</string>
+    <string name="porcentaje_propina">Porcentaje de propina</string>
+    <string name="redondear_propina">¿Redondear la propina?</string>
+    <string name="total_propina">Propina: %s</string>
+    <string name="nombre_estudiante">Diego Iván Rojas Ávila</string>
+</resources>

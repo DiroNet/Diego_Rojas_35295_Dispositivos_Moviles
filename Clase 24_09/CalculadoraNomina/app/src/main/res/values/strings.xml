@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Calculadora de Nómina</string>
+    <string name="titulo">Calculadora de Nómina</string>
+    <string name="subtitulo">Estime su pago mensual con las reglas de 2026</string>
+
+    <string name="salario_basico">Salario básico mensual</string>
+    <string name="horas_diurnas">Horas extra diurnas</string>
+    <string name="horas_nocturnas">Horas extra nocturnas</string>
+
+    <string name="dominical">Horas extra en domingo o festivo</string>
+    <string name="transporte_empresa">La empresa suministra el transporte</string>
+
+    <string name="calcular">Calcular</string>
+    <string name="limpiar">Limpiar</string>
+
+    <string name="error_salario_invalido">Ingrese un salario válido</string>
+    <string name="error_salario_minimo">El salario no puede ser inferior al mínimo (%1$s)</string>
+    <string name="error_horas_invalidas">Las horas extra deben ser un número mayor o igual a cero</string>
+    <string name="error_exceso_horas">El total de horas extra no puede superar 48 en el mes</string>
+
+    <string name="seccion_devengado">Devengado</string>
+    <string name="seccion_deducciones">Deducciones</string>
+    <string name="seccion_resultado">Resultado</string>
+
+    <string name="valor_hora">Valor hora ordinaria</string>
+    <string name="salario_basico_corto">Salario básico</string>
+    <string name="horas_extra">Horas extra</string>
+    <string name="auxilio_transporte">Auxilio de transporte</string>
+    <string name="total_devengado">Total devengado</string>
+    <string name="salud">Salud (4 %)</string>
+    <string name="pension">Pensión (4 %)</string>
+    <string name="fondo_solidaridad">Fondo de Solidaridad Pensional (1 %)</string>
+    <string name="total_deducciones">Total deducciones</string>
+    <string name="salario_neto">Salario neto a recibir</string>
+    <string name="equivale_smmlv">Equivale a %1$s SMMLV</string>
+
+    <string name="rango_1">Rango 1: con derecho a auxilio de transporte</string>
+    <string name="rango_2">Rango 2: sin auxilio de transporte ni Fondo de Solidaridad</string>
+    <string name="rango_3">Rango 3: aporta al Fondo de Solidaridad Pensional</string>
+    <string name="desc_rango_1">Ícono de bus, rango 1 con auxilio de transporte</string>
+    <string name="desc_rango_2">Ícono de maletín, rango 2 sin auxilio ni Fondo de Solidaridad</string>
+    <string name="desc_rango_3">Ícono de banco, rango 3 con aporte al Fondo de Solidaridad</string>
+</resources>
