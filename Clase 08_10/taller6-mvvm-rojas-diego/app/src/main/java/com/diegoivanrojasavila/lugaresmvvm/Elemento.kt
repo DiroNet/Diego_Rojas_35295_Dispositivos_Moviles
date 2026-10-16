@@ -13,7 +13,7 @@ data class Elemento(
     val esFavorito: Boolean = false
 )
 
-// lista de héroes que carga el viewmodel
+// lista de héroes que carga el modelo de vista
 fun obtenerSuperheroes(): List<Elemento> = listOf(
     Elemento(
         1,

@@ -14,20 +14,20 @@ import androidx.compose.ui.res.stringResource
 fun CampoNumerico(
     @StringRes etiqueta: Int,
     valor: String,
-    onValueChange: (String) -> Unit,
-    keyboardOptions: KeyboardOptions,
+    alCambiarValor: (String) -> Unit,
+    opcionesTeclado: KeyboardOptions,
     modifier: Modifier = Modifier,
-    keyboardActions: KeyboardActions = KeyboardActions.Default,
+    accionesTeclado: KeyboardActions = KeyboardActions.Default,
     esError: Boolean = false
 ) {
     OutlinedTextField(
         value = valor,
-        onValueChange = onValueChange,
+        onValueChange = alCambiarValor,
         label = { Text(stringResource(etiqueta)) },
         singleLine = true,
         isError = esError,
-        keyboardOptions = keyboardOptions,
-        keyboardActions = keyboardActions,
+        keyboardOptions = opcionesTeclado,
+        keyboardActions = accionesTeclado,
         modifier = modifier
     )
 }

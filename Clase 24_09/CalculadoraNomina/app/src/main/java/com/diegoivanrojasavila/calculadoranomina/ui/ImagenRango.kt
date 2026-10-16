@@ -19,7 +19,7 @@ import com.diegoivanrojasavila.calculadoranomina.logica.RangoSalarial
 
 @Composable
 fun ImagenRango(rango: RangoSalarial, modifier: Modifier = Modifier) {
-    // como en el dice roller, cada rango tiene su imagen
+    // como en el lanzador de dados, cada rango tiene su imagen
     val imagen = when (rango) {
         RangoSalarial.RANGO_1 -> R.drawable.rango_1
         RangoSalarial.RANGO_2 -> R.drawable.rango_2

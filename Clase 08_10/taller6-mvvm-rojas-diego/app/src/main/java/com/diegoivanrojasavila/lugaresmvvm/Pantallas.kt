@@ -51,7 +51,7 @@ import coil.compose.AsyncImage
 
 @Composable
 fun PantallaLista(
-    modeloVista: HeroesViewModel,
+    modeloVista: ModeloVistaHeroes,
     estadoLista: LazyListState,
     alTocarElemento: (Int) -> Unit
 ) {
@@ -154,7 +154,7 @@ fun TarjetaElemento(
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun PantallaDetalle(
-    modeloVista: HeroesViewModel,
+    modeloVista: ModeloVistaHeroes,
     id: Int,
     alVolver: () -> Unit
 ) {
@@ -234,7 +234,7 @@ fun ImagenHeroe(elemento: Elemento, tamano: Dp) {
 
 @Preview(showBackground = true)
 @Composable
-fun ListaPreview() {
+fun VistaPreviaLista() {
     MaterialTheme {
         ContenidoLista(
             elementos = obtenerSuperheroes().take(4),

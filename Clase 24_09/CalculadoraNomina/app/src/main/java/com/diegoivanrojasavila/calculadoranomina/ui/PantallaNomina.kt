@@ -37,7 +37,7 @@ import com.diegoivanrojasavila.calculadoranomina.logica.ResultadoValidacion
 import com.diegoivanrojasavila.calculadoranomina.logica.SMMLV
 import com.diegoivanrojasavila.calculadoranomina.logica.calcularNomina
 import com.diegoivanrojasavila.calculadoranomina.logica.validarDatos
-import com.diegoivanrojasavila.calculadoranomina.ui.theme.CalculadoraNominaTheme
+import com.diegoivanrojasavila.calculadoranomina.ui.tema.TemaCalculadoraNomina
 
 @Composable
 fun PantallaNomina(modifier: Modifier = Modifier) {
@@ -50,7 +50,7 @@ fun PantallaNomina(modifier: Modifier = Modifier) {
     var resultado by rememberSaveable { mutableStateOf<ResultadoNomina?>(null) }
     var error by rememberSaveable { mutableStateOf<ErrorValidacion?>(null) }
 
-    val focusManager = LocalFocusManager.current
+    val administradorFoco = LocalFocusManager.current
 
     fun calcular() {
         when (val validacion = validarDatos(salarioTexto, diurnasTexto, nocturnasTexto)) {
@@ -79,7 +79,7 @@ fun PantallaNomina(modifier: Modifier = Modifier) {
         transporteEmpresa = false
         resultado = null
         error = null
-        focusManager.clearFocus()
+        administradorFoco.clearFocus()
     }
 
     val errorEnSalario = error == ErrorValidacion.SALARIO_INVALIDO || error == ErrorValidacion.SALARIO_BAJO_MINIMO
@@ -109,25 +109,25 @@ fun PantallaNomina(modifier: Modifier = Modifier) {
         CampoNumerico(
             etiqueta = R.string.salario_basico,
             valor = salarioTexto,
-            onValueChange = { salarioTexto = it },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number, imeAction = ImeAction.Next),
+            alCambiarValor = { salarioTexto = it },
+            opcionesTeclado = KeyboardOptions(keyboardType = KeyboardType.Number, imeAction = ImeAction.Next),
             esError = errorEnSalario,
             modifier = Modifier.fillMaxWidth()
         )
         CampoNumerico(
             etiqueta = R.string.horas_diurnas,
             valor = diurnasTexto,
-            onValueChange = { diurnasTexto = it },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number, imeAction = ImeAction.Next),
+            alCambiarValor = { diurnasTexto = it },
+            opcionesTeclado = KeyboardOptions(keyboardType = KeyboardType.Number, imeAction = ImeAction.Next),
             esError = errorEnDiurnas,
             modifier = Modifier.fillMaxWidth()
         )
         CampoNumerico(
             etiqueta = R.string.horas_nocturnas,
             valor = nocturnasTexto,
-            onValueChange = { nocturnasTexto = it },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number, imeAction = ImeAction.Done),
-            keyboardActions = KeyboardActions(onDone = { focusManager.clearFocus() }),
+            alCambiarValor = { nocturnasTexto = it },
+            opcionesTeclado = KeyboardOptions(keyboardType = KeyboardType.Number, imeAction = ImeAction.Done),
+            accionesTeclado = KeyboardActions(onDone = { administradorFoco.clearFocus() }),
             esError = errorEnNocturnas,
             modifier = Modifier.fillMaxWidth()
         )
@@ -136,7 +136,7 @@ fun PantallaNomina(modifier: Modifier = Modifier) {
         FilaInterruptor(
             etiqueta = R.string.dominical,
             activado = esDominical,
-            onCheckedChange = {
+            alCambiar = {
                 esDominical = it
                 if (resultado != null) calcular()
             },
@@ -145,7 +145,7 @@ fun PantallaNomina(modifier: Modifier = Modifier) {
         FilaInterruptor(
             etiqueta = R.string.transporte_empresa,
             activado = transporteEmpresa,
-            onCheckedChange = {
+            alCambiar = {
                 transporteEmpresa = it
                 if (resultado != null) calcular()
             },
@@ -158,7 +158,7 @@ fun PantallaNomina(modifier: Modifier = Modifier) {
         ) {
             Button(
                 onClick = {
-                    focusManager.clearFocus()
+                    administradorFoco.clearFocus()
                     calcular()
                 },
                 modifier = Modifier.weight(1f)
@@ -207,8 +207,8 @@ private fun MensajeError(error: ErrorValidacion) {
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun PantallaNominaPreview() {
-    CalculadoraNominaTheme {
+fun VistaPreviaPantallaNomina() {
+    TemaCalculadoraNomina {
         Surface {
             PantallaNomina()
         }

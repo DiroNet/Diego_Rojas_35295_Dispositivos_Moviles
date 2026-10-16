@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 fun FilaInterruptor(
     @StringRes etiqueta: Int,
     activado: Boolean,
-    onCheckedChange: (Boolean) -> Unit,
+    alCambiar: (Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(
@@ -31,6 +31,6 @@ fun FilaInterruptor(
             modifier = Modifier.weight(1f)
         )
         Spacer(Modifier.width(8.dp))
-        Switch(checked = activado, onCheckedChange = onCheckedChange)
+        Switch(checked = activado, onCheckedChange = alCambiar)
     }
 }
